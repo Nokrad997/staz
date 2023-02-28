@@ -17,4 +17,9 @@ class Client extends Model
         'email',
         'phone_number',
     ];
+
+    public function findByEmail(string $email): ?Client
+    {
+        return $this->where('email', $email)->first();
+    }
 }

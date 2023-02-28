@@ -21,4 +21,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::controller(ClientController::class)->prefix('client')->name('client.')->group(function () {
     Route::get('/', 'index')->name('index');
+    Route::get('/{clientId}', 'show')->name('show');
+    Route::put('/{clientId}', 'update')->name('update');
+    Route::post('/', 'create')->name('create');
+    Route::delete('/{clientId}', 'destroy')->name('destroy');
 });
